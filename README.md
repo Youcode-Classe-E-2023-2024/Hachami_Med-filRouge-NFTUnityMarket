@@ -15,7 +15,8 @@ Welcome to the NFTUnityMarket project! This project is a decentralized NFT Marke
    - [Business Rules](#business-rules)
    - [Project Process Modelling](#project-process-modelling)
 4. [Limitations and Exclusions](#limitations-and-exclusions)
-5. [Get Started](#get-started)
+5. [Safety Requirements](#safety-requirements)
+6. [Get Started](#get-started)
 
 
 ## Introduction
@@ -41,6 +42,7 @@ The backend involves key classes like Admin, User, Collection Item, Listed Item,
 ### Architecture Overview
 
 The project's architecture comprises a React Client, Metamask Wallet, Nodejs Backend, Distributed File System, Ethereum Blockchain, and Smart Contracts. Each component plays a vital role in ensuring a smooth and secure user experience.
+![Architectural Diagram](./Docs/Uml/Architectural%20Diagram.png)
 
 ### Data Flow of Preliminary Model
 
@@ -62,16 +64,5 @@ The document outlines limitations, emphasizing the non-legal tender status of cr
 
 The safety requirements focus on blockchain protection, avoiding duplicity, ensuring transaction atomicity, returning auction funds securely, and maintaining data redundancy.
 
-## Conclusion
+## Get Started
 
-The report concludes by highlighting NFT as a promising technology in the blockchain market. It provides design models, security assessments, potential applications, and ongoing research challenges.
-
-## Acknowledgment
-
-The authors express gratitude to individuals, organizations, and colleagues for their support and guidance throughout the project.
-
-## References
-
-The references section lists relevant publications and sources that contributed to the project's research and development.
-
-Feel free to explore and contribute to the NFTUnityMarket project!
