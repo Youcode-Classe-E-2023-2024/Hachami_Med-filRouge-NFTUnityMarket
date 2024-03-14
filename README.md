@@ -3,6 +3,9 @@
 ## Overview
 Welcome to the NFTUnityMarket project! This project is a decentralized NFT Marketplace based on the Ethereum blockchain. The platform enables users to trade digital assets securely using Non-Fungible Tokens (NFTs). This readme provides an overview of the project, its features, implementation details, and safety requirements.
 
+### UI/UX
+https://www.figma.com/file/Jtw3gktsv37AKKHTuN6AGQ/NftUnity?type=design&node-id=0%3A1&mode=design&t=4Abvyr8W1bEpo3u5-1
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
