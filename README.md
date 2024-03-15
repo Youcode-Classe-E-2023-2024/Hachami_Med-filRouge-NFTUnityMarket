@@ -1,71 +1,81 @@
-# Hachami_Med-filRouge-NFTUnityMarket
+# Eventura
 
-## Overview
-Welcome to the NFTUnityMarket project! This project is a decentralized NFT Marketplace based on the Ethereum blockchain. The platform enables users to trade digital assets securely using Non-Fungible Tokens (NFTs). This readme provides an overview of the project, its features, implementation details, and safety requirements.
+Eventura is a platform dedicated to the management and booking of events (All categories). It aims to provide an optimal user experience for participants, organizers, and administrators alike.
 
-### UI/UX
+# UI/UX
 https://www.figma.com/file/Jtw3gktsv37AKKHTuN6AGQ/NftUnity?type=design&node-id=0%3A1&mode=design&t=4Abvyr8W1bEpo3u5-1
 
-## Table of Contents
+## Features
 
-1. [Introduction](#introduction)
-2. [Background and Basics](#background-and-basics)
-3. [Implementation Details](#implementation-details)
-   - [System Use-Case Overview](#system-use-case-overview)
-   - [System Backend Overview](#system-backend-overview)
-   - [Architecture Overview](#architecture-overview)
-   - [Data Flow of Preliminary Model](#data-flow-of-preliminary-model)
-   - [Business Rules](#business-rules)
-   - [Project Process Modelling](#project-process-modelling)
-4. [Limitations and Exclusions](#limitations-and-exclusions)
-5. [Safety Requirements](#safety-requirements)
-6. [Get Started](#get-started)
+### Users
 
-
-## Introduction
-
-The NFTUnityMarket project focuses on creating a secure platform for trading digital assets through Non-Fungible Tokens (NFTs). It addresses the challenges of centralized storage systems for digital assets and explores the technical feasibility of a decentralized file system using the IPFS protocol. The project aims to promote the use of blockchain technology for secure and transparent transactions.
+- **Registration:** Users can sign up on the platform by providing their name, email address, and password.
+- **Login:** Users can log in to their accounts using their credentials.
+- **Password Reset:** Users can reset their passwords in case they forget by receiving a password reset email.
+- **Event Discovery:** Users can browse through a list of available events with pagination for easy navigation.
+- **Event Filtering:** Users can filter events by category.
+- **Event Search:** Users can search for events by title.
+- **Event Details:** Users can view detailed information about an event, including its description, date, location, and available seats.
+- **Seat Reservation:** Users can reserve a seat for an event.
+- **Payemnt:** Users can reserve a seat for an event.
 
 
 
-## Background and Basics
 
-Non-Fungible Tokens (NFTs) are digital certificates of authenticity representing ownership of unique items. Stored on a blockchain, NFTs ensure secure, immutable ownership records. The report emphasizes the importance of metadata, smart contracts, and blockchain technology in ensuring the uniqueness and verifiability of NFTs.
+### Organizers
 
-## Implementation Details
+- **Event Creation:** Organizers can create a new event by specifying its title, description, date, location, category, and the number of available seats.
+- **Event Management:** Organizers can manage their events.
+- **Reservation Statistics:** Organizers can access statistics on the reservations for their events.
+- **Reservation Handling:** Organizers can choose between automatic acceptance of reservations or manual validation.
 
-### System Use-Case Overview
+### Administrators
 
-The Use-Case diagram outlines functional requirements, including browsing the marketplace, viewing items, buying/selling NFT assets, participating in auctions, and minting NFTs.(coming soon)
+- **User Management:** Administrators can manage users by restricting their access.
+- **Category Management:** Administrators can manage event categories by adding, modifying, or deleting categories.
+- **Event Validation:** Administrators can validate events created by organizers before they are published on the platform.
+- **Statistics:** Administrators can access platform-wide statistics.
 
-### System Backend Overview
+### Developers
 
-The backend involves key classes like Admin, User, Collection Item, Listed Item, and more. Smart Contracts play a crucial role, with interfaces like IERC721 and concrete classes for NFT minting, trading, and auctions.(coming soon)
+- **Payment Integration:** Developers can integrate a payment system for event reservations, allowing users to make payments securely for their bookings.
 
-### Architecture Overview
+## Tech Stack
 
-The project's architecture comprises a React Client, Metamask Wallet, Nodejs Backend, Distributed File System, Ethereum Blockchain, and Smart Contracts. Each component plays a vital role in ensuring a smooth and secure user experience.
-![Architectural Diagram](./Docs/Uml/Architectural%20Diagram.png)
+- **Frontend:** React
+- **Backend:** Laravel
+- **Database:** MySQL (or your preferred database system)
 
-### Data Flow of Preliminary Model
+## Installation
 
-The Data Flow Diagram illustrates the buying process of NFT assets, emphasizing user interactions, wallet approvals, and transaction records.(coming soon)
+To run Eventura locally, follow these steps:
 
-### Business Rules
+### Frontend (React)
 
-The project adheres to essential business rules, including codes of conduct, smart contracts, platform terms of service, terms of sale, intellectual property protection, payments, and data privacy.(coming soon)
+1. Navigate to the `frontend` directory: `cd frontend`.
+2. Install dependencies: `npm install`.
+3. Set up your environment variables if necessary.
+4. Run the development server: `npm start`.
 
-### Project Process Modelling
+### Backend (Laravel)
 
-The project follows agile project management, promoting an iterative approach for adaptability and releasing benefits throughout the development process.
+1. Navigate to the `backend` directory: `cd backend`.
+2. Install dependencies: `composer install`.
+3. Set up your environment variables by copying `.env.example` to `.env` and configuring it.
+4. Generate an application key: `php artisan key:generate`.
+5. Run migrations to create the necessary tables: `php artisan migrate`.
+6. Serve the application: `php artisan serve`.
 
-## Limitations and Exclusions
+## Contributing
 
-The document outlines limitations, emphasizing the non-legal tender status of cryptocurrency in many countries, user risks, and the project's technical demonstration nature.
+Contributions are welcome! If you'd like to contribute to Eventura, please follow these steps:
 
-## Safety Requirements
+1. Fork this repository.
+2. Create your feature branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
 
-The safety requirements focus on blockchain protection, avoiding duplicity, ensuring transaction atomicity, returning auction funds securely, and maintaining data redundancy.
+## License
 
-## Get Started
-
+This project is licensed under the [MIT License](LICENSE).
