@@ -52,14 +52,14 @@ To run Eventura locally, follow these steps:
 
 ### Frontend (React)
 
-1. Navigate to the `frontend` directory: `cd frontend`.
+1. Navigate to the `frontend` directory: `cd _frontend`.
 2. Install dependencies: `npm install`.
 3. Set up your environment variables if necessary.
 4. Run the development server: `npm start`.
 
 ### Backend (Laravel)
 
-1. Navigate to the `backend` directory: `cd backend`.
+1. Navigate to the `backend` directory: `cd _backend`.
 2. Install dependencies: `composer install`.
 3. Set up your environment variables by copying `.env.example` to `.env` and configuring it.
 4. Generate an application key: `php artisan key:generate`.
