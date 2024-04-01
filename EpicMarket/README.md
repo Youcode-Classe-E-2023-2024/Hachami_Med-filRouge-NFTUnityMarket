@@ -1,73 +1,68 @@
-# Overview
+# Hachami_Med-filRouge-NFTUnityMarket
 
-NFT Marketplace React Template
+## Overview
+Welcome to the NFTUnityMarket project! This project is a decentralized NFT Marketplace based on the Ethereum blockchain. The platform enables users to trade digital assets securely using Non-Fungible Tokens (NFTs). This readme provides an overview of the project, its features, implementation details, and safety requirements.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Scripts
+1. [Introduction](#introduction)
+2. [Background and Basics](#background-and-basics)
+3. [Implementation Details](#implementation-details)
+   - [System Use-Case Overview](#system-use-case-overview)
+   - [System Backend Overview](#system-backend-overview)
+   - [Architecture Overview](#architecture-overview)
+   - [Data Flow of Preliminary Model](#data-flow-of-preliminary-model)
+   - [Business Rules](#business-rules)
+   - [Project Process Modelling](#project-process-modelling)
+4. [Limitations and Exclusions](#limitations-and-exclusions)
+5. [Safety Requirements](#safety-requirements)
+6. [Get Started](#get-started)
 
-In the project directory, you can run:
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The NFTUnityMarket project focuses on creating a secure platform for trading digital assets through Non-Fungible Tokens (NFTs). It addresses the challenges of centralized storage systems for digital assets and explores the technical feasibility of a decentralized file system using the IPFS protocol. The project aims to promote the use of blockchain technology for secure and transparent transactions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Background and Basics
 
-### `npm run build`
+Non-Fungible Tokens (NFTs) are digital certificates of authenticity representing ownership of unique items. Stored on a blockchain, NFTs ensure secure, immutable ownership records. The report emphasizes the importance of metadata, smart contracts, and blockchain technology in ensuring the uniqueness and verifiability of NFTs.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Implementation Details
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### System Use-Case Overview
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Use-Case diagram outlines functional requirements, including browsing the marketplace, viewing items, buying/selling NFT assets, participating in auctions, and minting NFTs.(coming soon)
 
-### `npm run eject`
+### System Backend Overview
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The backend involves key classes like Admin, User, Collection Item, Listed Item, and more. Smart Contracts play a crucial role, with interfaces like IERC721 and concrete classes for NFT minting, trading, and auctions.(coming soon)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Architecture Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The project's architecture comprises a React Client, Metamask Wallet, Nodejs Backend, Distributed File System, Ethereum Blockchain, and Smart Contracts. Each component plays a vital role in ensuring a smooth and secure user experience.
+![Architectural Diagram](./Docs/Uml/Architectural%20Diagram.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Data Flow of Preliminary Model
 
-## Learn More
+The Data Flow Diagram illustrates the buying process of NFT assets, emphasizing user interactions, wallet approvals, and transaction records.(coming soon)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Business Rules
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project adheres to essential business rules, including codes of conduct, smart contracts, platform terms of service, terms of sale, intellectual property protection, payments, and data privacy.(coming soon)
 
-### Code Splitting
+### Project Process Modelling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The project follows agile project management, promoting an iterative approach for adaptability and releasing benefits throughout the development process.
 
-### Analyzing the Bundle Size
+## Limitations and Exclusions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The document outlines limitations, emphasizing the non-legal tender status of cryptocurrency in many countries, user risks, and the project's technical demonstration nature.
 
-### Making a Progressive Web App
+## Safety Requirements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The safety requirements focus on blockchain protection, avoiding duplicity, ensuring transaction atomicity, returning auction funds securely, and maintaining data redundancy.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Get Started
 
