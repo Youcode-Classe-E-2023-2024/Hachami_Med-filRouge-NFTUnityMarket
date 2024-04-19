@@ -67,5 +67,17 @@ class ApiController extends Controller
             "message" => "User registered successfully"
         ]);
     }
+
+    // To generate refresh token value
+    public function refreshToken(){
+
+        $newToken = auth()->refresh();
+
+        return response()->json([
+            "status" => true,
+            "message" => "New access token",
+            "token" => $newToken,
+        ]);
+    }
    
 }
