@@ -68,6 +68,43 @@ class ApiController extends Controller
         ]);
     }
 
+    // Admin Login (POST , formdata)
+    public function adminlogin(Request $request){
+        
+        // data validation
+        $request->validate([
+            "email" => "required|email",
+            "password" => "required"
+        ]);
+
+        // JWTAuth
+        $token = JWTAuth::attempt([
+            "email" => $request->email,
+            "password" => $request->password
+        ]);
+
+        if(!empty($token)){
+
+            $userdata = auth()->user();
+
+            if($userdata->is_admin == "1"){
+                return response()->json([
+                    "status" => true,
+                    "message" => "User logged in succcessfully",
+                    "access_token" => $token,
+                    "user"=>  $userdata
+                ]);
+
+            }
+           
+        }
+
+        return response()->json([
+            "status" => false,
+            "message" => "Invalid details"
+        ]);
+    }
+
     // To generate refresh token value
     public function refreshToken(){
 
@@ -91,7 +128,7 @@ class ApiController extends Controller
             "data" => $userdata
         ]);
     } 
-    
+
     // User Logout (GET)
     public function logout(){
         

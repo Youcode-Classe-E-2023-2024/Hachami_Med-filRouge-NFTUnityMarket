@@ -14,6 +14,8 @@ Route::get("login", function(){
 
 Route::post("register", [ApiController::class, "register"]);
 Route::post("login", [ApiController::class, "login"]);
+Route::post("admin_login", [ApiController::class, "adminlogin"]);
+
 
 
 Route::group(["middleware" => ["auth:api"]], function(){
