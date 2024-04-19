@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../auth-profile/_services/auth.service';
 import { CartServicesService } from '../../ecommerce-auth/_services/cart-services.service';
 // ../../ecommerce-auth/_services/cart-services.service
+// ecommerce-auth/_services/cart-services.service
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
