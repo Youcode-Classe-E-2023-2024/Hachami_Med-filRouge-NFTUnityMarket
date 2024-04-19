@@ -170,4 +170,23 @@ class AdminController extends Controller
 
     }
 
+    public function getUsersCount(){
+
+        $userdata = auth()->user();
+
+        if($userdata->is_admin == "1"){
+           
+            $userCount = User::count();
+            $ProductCount = Product::count();
+            $SaleCount = Sale::count();
+            return response()->json([
+                'userCount'=>$userCount,
+                'ProductCount'=>$ProductCount,
+                'SaleCount'=>$SaleCount,
+            
+            ]);
+        }
+        
+    }
+
 }
