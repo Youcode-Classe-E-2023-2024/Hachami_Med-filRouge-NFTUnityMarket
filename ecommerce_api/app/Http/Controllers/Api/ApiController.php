@@ -77,6 +77,15 @@ class ApiController extends Controller
             "status" => true,
             "message" => "New access token",
             "token" => $newToken,
+
+    // User Logout (GET)
+    public function logout(){
+        
+        auth()->logout();
+
+        return response()->json([
+            "status" => true,
+            "message" => "User logged out successfully"
         ]);
     }
    
