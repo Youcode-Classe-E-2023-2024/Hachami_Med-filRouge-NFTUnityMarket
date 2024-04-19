@@ -158,4 +158,16 @@ class AdminController extends Controller
 
     }
 
+    public function getLastUsers()
+    {
+        $userdata = auth()->user();
+
+        if($userdata->is_admin == "1"){
+           
+            $latestUsers = User::latest()->take(5)->get();
+            return response()->json(['latest_user'=>$latestUsers]);
+        }
+
+    }
+
 }
