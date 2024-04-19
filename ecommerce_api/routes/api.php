@@ -15,6 +15,10 @@ Route::get("login", function(){
 Route::post("register", [ApiController::class, "register"]);
 Route::post("login", [ApiController::class, "login"]);
 
+
+Route::group(["middleware" => ["auth:api"]], function(){
+
+    Route::get("refresh", [ApiController::class, "refreshToken"]);
 Route::group(["middleware" => ["auth:api"]], function(){
 
     Route::get("logout", [ApiController::class, "logout"]);

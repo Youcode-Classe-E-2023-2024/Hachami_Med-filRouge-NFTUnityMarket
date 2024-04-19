@@ -68,6 +68,16 @@ class ApiController extends Controller
         ]);
     }
 
+    // To generate refresh token value
+    public function refreshToken(){
+
+        $newToken = auth()->refresh();
+
+        return response()->json([
+            "status" => true,
+            "message" => "New access token",
+            "token" => $newToken,
+
     // User Logout (GET)
     public function logout(){
         
