@@ -4,6 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
+  
+
+
+  {
+    path: '', 
+    // canActivate: [AuthGuard],
+    loadChildren:() =>
+    import('./modules/dashboard/dashboard.module').then((m)=> m.DashboardModule) 
+  }
+
 
 ];
 
