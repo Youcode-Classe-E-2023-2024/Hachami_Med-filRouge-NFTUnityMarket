@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/modules/auth/_services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,7 @@ export class HeaderComponent {
 
 
   constructor(
+    public authService:AuthService,
     public router:Router
   ){}
 
@@ -74,8 +76,7 @@ export class HeaderComponent {
 
  
   logout(){
-    // this.authService.logout();
-    alert("d")
+    this.authService.logout();
 
   }
 
