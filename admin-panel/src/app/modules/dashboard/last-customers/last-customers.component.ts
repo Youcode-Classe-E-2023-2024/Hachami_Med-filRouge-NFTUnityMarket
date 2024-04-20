@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AnimationsModule } from 'src/app/animations/animations.module';
+import { ProductService } from '../../product/_services/product.service';
 import { DashboardService } from '../_services/dashboard.service';
 import { URL_BACKEND } from 'src/config/config';
 
