@@ -3,6 +3,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Product\CategoriesController;;
+
 
 
 
@@ -38,4 +40,19 @@ Route::group(["middleware" => ["auth:api"]], function(){
     Route::get("admin/users/{id}", [AdminController::class, "getUser"]);
     Route::put("admin/users/update/{id}", [AdminController::class, "updateUser"]);
     Route::delete("admin/users/delete/{id}", [AdminController::class, "deleteUser"]);
+});
+
+
+// CATEGORY
+
+Route::group(["middleware" => ["api"]], function(){
+    Route::get("category/all", [CategoriesController::class, "index"]);
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::delete("category/{id}", [CategoriesController::class, "destroy"]);
+    Route::post("category/add", [CategoriesController::class, "store"]);
+    Route::post("category/update/{id}", [CategoriesController::class, "update"]);
+    Route::get("category/detail/{id}", [CategoriesController::class, "getCategory"]);
+
 });
