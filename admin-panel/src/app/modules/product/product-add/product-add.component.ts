@@ -133,7 +133,7 @@ export class ProductAddComponent {
     formData.append("title", this.title);
     formData.append("sku", this.sku);
     formData.append("price_dsc", this.pricedsc);
-    formData.append("price_usd", this.priceusd);
+    formData.append("price_dhs", this.priceusd);
     formData.append("description", this.description);
     formData.append("summary", this.summary);
     formData.append("stock", this.stock);
