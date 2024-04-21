@@ -18,7 +18,7 @@ class Product extends Model
        'slug', 
        'sku', 
        'price_dsc',
-       'price_usd',
+       'price_dhs',
        'tags', 
        'description',
        'summary', 
