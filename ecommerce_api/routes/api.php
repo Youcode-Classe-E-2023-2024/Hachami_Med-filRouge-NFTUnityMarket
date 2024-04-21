@@ -5,6 +5,11 @@ use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\AdminController;
 use App\Http\Controllers\Product\CategoriesController;
 use App\Http\Controllers\Ecommerce\EcommerceController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\ProductImagesContoller;
+use App\Http\Controllers\Product\ProductSizeColorController;
+
+
 
 
 
@@ -58,5 +63,34 @@ Route::group(["middleware" => ["auth:api"]], function(){
     Route::post("category/add", [CategoriesController::class, "store"]);
     Route::post("category/update/{id}", [CategoriesController::class, "update"]);
     Route::get("category/detail/{id}", [CategoriesController::class, "getCategory"]);
+
+});
+
+
+
+// PRODUCT
+
+Route::group(["middleware" => ["api"]], function(){
+    Route::get("product/all", [ProductController::class, "index"]);
+    Route::get("topfour/all", [ProductController::class, "topfour"]);
+
+    Route::get("product/get_info", [ProductController::class, "get_info"]);
+    Route::get("product/show_product/{id}", [ProductController::class, "show"]);
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::post("product/add", [ProductController::class, "store"]);
+    Route::post("product/update/{id}", [ProductController::class, "update"]);
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::post("product/img/add", [ProductImagesContoller::class, "store"]);
+    Route::delete("product/img/delete/{id}", [ProductImagesContoller::class, "destroy"]);
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::post("product/sizecolor/add", [ProductSizeColorController::class, "store"]);
+    Route::delete("product/size/delete/{id}", [ProductSizeColorController::class, "destroy_size"]);
+    Route::delete("product/color/delete/{id}", [ProductSizeColorController::class, "destroy"]);
 
 });
