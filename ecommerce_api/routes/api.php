@@ -3,11 +3,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\AdminController;
-use App\Http\Controllers\Product\CategoriesController;;
+use App\Http\Controllers\Product\CategoriesController;
+use App\Http\Controllers\Ecommerce\EcommerceController;
 
 
 
+// ECOMMERCE START
 
+Route::get("home", [EcommerceController::class, "home"]);
+Route::get("detail/{id}", [EcommerceController::class, "pdetail"]);
 
 Route::get("login", function(){
     return response()->json(['message'=>'Unauthenticated'],401);
