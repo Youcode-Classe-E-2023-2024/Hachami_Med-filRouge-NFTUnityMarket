@@ -3,6 +3,8 @@ import { HomeService } from '../_services/home.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../auth-profile/_services/auth.service';
 import { CartServicesService } from '../../ecommerce-auth/_services/cart-services.service';
+import { URL_BACKEND } from 'src/config/config';
+
 // ../../ecommerce-auth/_services/cart-services.service
 // ecommerce-auth/_services/cart-services.service
 @Component({
@@ -34,6 +36,8 @@ export class ProductDetailComponent {
   unit_price:any=0;
   product_size_id	:any=0;
   product_color_size_id	:any=0;
+  URL=URL_BACKEND;
+
 
   constructor(
     public homeService:HomeService,
@@ -98,7 +102,7 @@ export class ProductDetailComponent {
        
         this.summary = resp.product.summary
         this.description = resp.product.description
-        this.imageEcommerce = resp.product.imageEcommerce
+        this.imageEcommerce = resp.product.image
         this.sizes = resp.product.sizes
         this.images = resp.product.images
         this.categoryname = resp.product.category.name
