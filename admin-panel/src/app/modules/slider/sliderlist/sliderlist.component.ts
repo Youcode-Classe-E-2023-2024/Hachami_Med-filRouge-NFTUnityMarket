@@ -32,7 +32,7 @@ export class SliderlistComponent {
     }
     else{
       this.slider=this.orginalslider.filter(slider=>{
-        return slider.name.toLowerCase().includes(this.searchText.toLowerCase()) 
+        return slider.title.toLowerCase().includes(this.searchText.toLowerCase()) 
             
       })
     }
