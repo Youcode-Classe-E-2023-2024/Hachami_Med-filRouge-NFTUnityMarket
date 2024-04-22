@@ -8,6 +8,8 @@ use App\Http\Controllers\Ecommerce\EcommerceController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Product\ProductImagesContoller;
 use App\Http\Controllers\Product\ProductSizeColorController;
+use App\Http\Controllers\Extra\SliderController;
+
 
 
 
@@ -92,5 +94,20 @@ Route::group(["middleware" => ["auth:api"]], function(){
     Route::post("product/sizecolor/add", [ProductSizeColorController::class, "store"]);
     Route::delete("product/size/delete/{id}", [ProductSizeColorController::class, "destroy_size"]);
     Route::delete("product/color/delete/{id}", [ProductSizeColorController::class, "destroy"]);
+
+});
+
+
+// SLIDER
+
+Route::group(["middleware" => ["api"]], function(){
+    Route::get("slider/all", [SliderController::class, "index"]);
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::delete("slider/{id}", [SliderController::class, "destroy"]);
+    Route::post("slider/add", [SliderController::class, "store"]);
+    Route::post("slider/update/{id}", [SliderController::class, "update"]);
+    Route::get("slider/detail/{id}", [SliderController::class, "getSlider"]);
 
 });
