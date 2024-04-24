@@ -96,24 +96,34 @@ class ProductController extends Controller
             $request->request->add(["images"=>$path]);
 
         }
-        $product = Product::create($request->all());
+        // $product = Product::create($request->all());
+        if ($request->hasFile('images_file')) {
+            // dd($request->images_file);
+        // dd($request->files , $request->images_file);
 
-        foreach ($request->file("files") as $key=> $file){
-            $extension=$file->getClientOriginalExtension();
-            $size=$file->getSize();
-            $oname=$file->getClientOriginalName();
-
-            $path = Storage::putFile("products", $file);
-            ProductImages::create([
-                "product_id"=> $product->id,
-                "file_name"=> $oname,
-                "images"=>$path,
-                "size"=>$size,
-                "type"=>$extension,
-            ]);
-
-
+            foreach ($request->file("files") as $key=> $file){
+                dd($file->getClientOriginalExtension());
+            //     $extension=$file->getClientOriginalExtension();
+            //     dd($file);
+            //     // $size=$file->getSize();
+            //     // $oname=$file->getClientOriginalName();
+    
+            //     // $path = Storage::putFile("products", $file);
+            //     // ProductImages::create([
+            //     //     "product_id"=> $product->id,
+            //     //     "file_name"=> $oname,
+            //     //     "images"=>$path,
+            //     //     "size"=>$size,
+            //     //     "type"=>$extension,
+            //     // ]);
+    
+    
+            }
         }
+        else{
+            dd('no');
+        }
+        
 
         return response()->json(["message"=>200]);
 
