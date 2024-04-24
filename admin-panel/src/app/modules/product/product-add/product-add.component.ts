@@ -26,7 +26,7 @@ export class ProductAddComponent {
   title:any=null;
   sku:any = null;
   pricedsc:any='';
-  priceusd:any='';
+  price_dhs:any='';
   description:any=null;
   summary:any=null;
   stock:any='';
@@ -116,7 +116,7 @@ export class ProductAddComponent {
   }
   crateProduct(){
 
-    if(!this.title || !this.sku || !this.pricedsc || !this.priceusd || !this.description || !this.summary
+    if(!this.title || !this.sku || !this.pricedsc || !this.price_dhs || !this.description || !this.summary
        || !this.stock || !this.category_id || !this.images_file )
     {
       this.errorMessage="All input required";
@@ -133,7 +133,7 @@ export class ProductAddComponent {
     formData.append("title", this.title);
     formData.append("sku", this.sku);
     formData.append("price_dsc", this.pricedsc);
-    formData.append("price_dhs", this.priceusd);
+    formData.append("price_dhs", this.price_dhs);
     formData.append("description", this.description);
     formData.append("summary", this.summary);
     formData.append("stock", this.stock);
@@ -158,7 +158,7 @@ export class ProductAddComponent {
       this.title=null;
       this.sku=null;
       this.pricedsc=null;
-      this.priceusd=null;
+      this.price_dhs=null;
       this.description=null;
       this.summary=null;
       this.stock=null;
