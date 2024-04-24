@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
 import { BasketComponent } from './basket/basket.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { OrderCompleteComponent } from './order-complete/order-complete.component';
+// import { CheckoutComponent } from './checkout/checkout.component';
+// import { OrderCompleteComponent } from './order-complete/order-complete.component';
 
 
 @NgModule({
@@ -17,8 +17,8 @@ import { OrderCompleteComponent } from './order-complete/order-complete.componen
     EcommerceAuthComponent,
     BasketComponent,
     ProfileComponent,
-    CheckoutComponent,
-    OrderCompleteComponent
+    // CheckoutComponent,
+    // OrderCompleteComponent
   ],
   imports: [
     CommonModule,

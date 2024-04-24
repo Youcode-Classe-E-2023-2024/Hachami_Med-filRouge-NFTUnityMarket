@@ -8,7 +8,8 @@ import { SliderComponent } from './slider/slider.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
-// import { ProductDetailComponent } from './product-detail/product-detail.component';
+
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { ProductComponent } from './product/product.component';
     SliderComponent,
     DashboardComponent,
     ProductComponent,
-    // ProductDetailComponent
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,

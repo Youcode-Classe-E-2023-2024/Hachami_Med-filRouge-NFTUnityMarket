@@ -30,13 +30,14 @@
     <div>
 
         <div>
-            <img id="main-img" src="{{URL}}storage/{{imageEcommerce}}" class="w-full" />
+            <img id="main-img" [src]="replaceUrl(mainImg)" class="w-full" />
         </div>
 
         <div class="grid grid-cols-5 gap-4 mt-4">
-            <div *ngFor="let image of images">
-                <img [src]="image.images" class="single-img cursor-pointer border  w-full" (click)="changeMainImage(image.images)" />
+            <div *ngFor="let image_ of images_files; let i=index">
+                <img [src]="replaceUrl(image_.images)" class="single-img cursor-pointer border  w-full" (click)="changeMainImage(image_.images)" />
             </div>
+            
             
     
 
@@ -86,14 +87,12 @@
 
         </p>
         <div class="mt-4 flex items-center gap-3">
-            <span class="text-xl text-primary font-semibold"> ${{price_usd}}.00 </span>
-            <span class="text-sm line-through " *ngIf="discount_p != null" > ${{discount_p}}.00 </span>
+            <span class="text-xl text-primary font-semibold"> {{price_dhs}}.00 MAD</span>
 
         </div>
 
         <div class="mt-4 flex items-center gap-3">
-            <span class="text-sm line-through " > ( {{price_dsc}}.00 TL) </span>
-
+            <span class="text-sm line-through " *ngIf="discount_p != null" > {{discount_p}}.00 MAD </span>
         </div>
 
         <div class="pt-1" *ngIf="SizeVisible==1">
