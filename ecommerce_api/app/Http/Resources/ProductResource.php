@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class  ProductResource extends JsonResource
 {
     /**
     
@@ -32,7 +32,7 @@ class ProductResource extends JsonResource
             "slug"=>$this->resource->slug,
             "sku"=>$this->resource->sku,
             "price_dsc"=>$this->resource->price_dsc,
-            "price_usd"=>$this->resource->price_usd,
+            "price_dhs"=>$this->resource->price_dhs,
             "tags"=>$this->resource->tags,
             "tags_a"=>$this->resource->tags ? explode(",", $this->resource->tags): [],
             "stock"=>$this->resource->stock,
