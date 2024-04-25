@@ -62,7 +62,7 @@ class ProductController extends Controller
 
       $search= $request->search;
       $category_id = $request->category_id;
-      $products = Product::filterProduct($search, $category_id)->orderBy("id", "desc")->paginate(30);
+      $products = Product::filterProduct($search, $category_id)->orderBy("id", "desc")->paginate(3);
 
       return response()->json([
         "message"=>200,
