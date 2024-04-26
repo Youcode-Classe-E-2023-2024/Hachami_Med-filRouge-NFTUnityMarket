@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedService } from 'src/app/shared/_services/shared.service';
+import { SharedService } from 'src/app/shared/_services/shared.service';  
 import { URL_BACKEND } from 'src/config/config';
 import { HomeService } from '../_services/home.service';
 
