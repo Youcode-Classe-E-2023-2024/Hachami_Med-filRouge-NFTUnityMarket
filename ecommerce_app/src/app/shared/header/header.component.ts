@@ -11,6 +11,7 @@ import { SharedService } from '../_services/shared.service';
 export class HeaderComponent {
 
   categories:any[] =[];
+  numItems:number=0;
   
   constructor(
     public authService:AuthService,
@@ -35,6 +36,26 @@ export class HeaderComponent {
   ngOnInit(){
     this.sharedService.getCategory().subscribe((data:any)=>{
       this.categories = data['categories'];
+    })
+    this.numOfItems();
+  }
+
+  numOfItems(){
+    this.sharedService.getCartsItems().subscribe((data:any)=>{  
+      if (data && data.carts && data.carts.data) {
+        let totalItems = 0;
+    
+        for (const item of data.carts.data) {
+            totalItems += item.quantity;
+        }
+    
+        // 'totalItems' now contains the total number of items in the cart
+        console.log("Total number of items in the cart:", totalItems);
+        this.numItems = totalItems;
+    } else {
+        console.log("Invalid cart data format");
+    }
+      
     })
   }
 

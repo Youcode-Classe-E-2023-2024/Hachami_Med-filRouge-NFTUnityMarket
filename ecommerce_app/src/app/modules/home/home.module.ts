@@ -10,7 +10,8 @@ import { RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-
+import {ShopComponent} from './shop/shop.component';
+import {AboutComponent} from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     SliderComponent,
     DashboardComponent,
     ProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ShopComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
