@@ -9,21 +9,39 @@ use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Product\ProductImagesContoller;
 use App\Http\Controllers\Product\ProductSizeColorController;
 use App\Http\Controllers\Extra\SliderController;
+use App\Http\Controllers\Cart\CartController;
+use App\Http\Controllers\Cupon\CuponController;
+use App\Http\Controllers\Discount\DiscountController;
 
 
 
 
 
+Route::get("login", function(){
+    return response()->json(['message'=>'Unauthenticated'],401);
+
+})->name('login');
 
 // ECOMMERCE START
 
 Route::get("home", [EcommerceController::class, "home"]);
 Route::get("detail/{id}", [EcommerceController::class, "pdetail"]);
 
-Route::get("login", function(){
-    return response()->json(['message'=>'Unauthenticated'],401);
 
-})->name('login');
+
+Route::group(["middleware" => ["auth:api"]], function(){
+
+    Route::get("Ecommerce/cart", [CartController::class, "index"]);
+    Route::post("Ecommerce/cart/add", [CartController::class, "store"]);
+    Route::post("Ecommerce/cart/update/{id}", [CartController::class, "update"]);
+    Route::delete("Ecommerce/cart/delete/{id}", [CartController::class, "destroy"]);
+
+
+
+
+});
+
+
 
 
 
@@ -71,9 +89,10 @@ Route::group(["middleware" => ["auth:api"]], function(){
 
 
 // PRODUCT
+Route::get("product/all", [ProductController::class, "index"]);
 
 Route::group(["middleware" => ["api"]], function(){
-    Route::get("product/all", [ProductController::class, "index"]);
+    // Route::get("product/all", [ProductController::class, "index"]);
     Route::get("topfour/all", [ProductController::class, "topfour"]);
 
     Route::get("product/get_info", [ProductController::class, "get_info"]);
@@ -109,5 +128,39 @@ Route::group(["middleware" => ["auth:api"]], function(){
     Route::post("slider/add", [SliderController::class, "store"]);
     Route::post("slider/update/{id}", [SliderController::class, "update"]);
     Route::get("slider/detail/{id}", [SliderController::class, "getSlider"]);
+
+});
+
+// CUPON
+
+Route::group(["middleware" => ["api"]], function(){
+    Route::get("cupons/all", [CuponController::class, "index"]);
+    Route::get("cupons/config-all", [CuponController::class, "config_all"]);
+    Route::get("cupons/show/{id}", [CuponController::class, "show"]);
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::post("cupons/add", [CuponController::class, "store"]);
+    Route::post("cupons/update/{id}", [CuponController::class, "update"]);
+
+    Route::delete("cupons/delete/{id}", [CuponController::class, "destroy"]);
+
+
+});
+
+
+
+// DISCOUNT
+Route::group(["middleware" => ["api"]], function(){
+    Route::get("discount/all", [DiscountController::class, "index"]);
+    Route::get("discount/show_discount/{id}", [DiscountController::class, "show"]);
+
+
+});
+
+Route::group(["middleware" => ["auth:api"]], function(){
+    Route::delete("discount/delete/{id}", [DiscountController::class, "destroy"]);
+    Route::post("discount/add", [DiscountController::class, "store"]);
+    Route::post("discount/update/{id}", [DiscountController::class, "update"]);
 
 });

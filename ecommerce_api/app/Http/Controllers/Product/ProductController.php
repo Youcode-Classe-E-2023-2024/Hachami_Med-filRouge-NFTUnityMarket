@@ -62,7 +62,7 @@ class ProductController extends Controller
 
       $search= $request->search;
       $category_id = $request->category_id;
-      $products = Product::filterProduct($search, $category_id)->orderBy("id", "desc")->paginate(30);
+      $products = Product::filterProduct($search, $category_id)->orderBy("id", "desc")->paginate(3);
 
       return response()->json([
         "message"=>200,
@@ -97,23 +97,30 @@ class ProductController extends Controller
 
         }
         $product = Product::create($request->all());
+        // if ($request->hasFile('images_file')) {
 
-        foreach ($request->file("files") as $key=> $file){
-            $extension=$file->getClientOriginalExtension();
-            $size=$file->getSize();
-            $oname=$file->getClientOriginalName();
-
-            $path = Storage::putFile("products", $file);
-            ProductImages::create([
-                "product_id"=> $product->id,
-                "file_name"=> $oname,
-                "images"=>$path,
-                "size"=>$size,
-                "type"=>$extension,
-            ]);
-
-
-        }
+            foreach ($request->file("files") as $key=> $file){
+                $extension=$file->getClientOriginalExtension();
+                dd($file);
+                $size=$file->getSize();
+                $oname=$file->getClientOriginalName();
+    
+                $path = Storage::putFile("products", $file);
+                ProductImages::create([
+                    "product_id"=> $product->id,
+                    "file_name"=> $oname,
+                    "images"=>$path,
+                    "size"=>$size,
+                    "type"=>$extension,
+                ]);
+    
+    
+            }
+        // }
+        // else{
+        //     dd('no');
+        // }
+        
 
         return response()->json(["message"=>200]);
 

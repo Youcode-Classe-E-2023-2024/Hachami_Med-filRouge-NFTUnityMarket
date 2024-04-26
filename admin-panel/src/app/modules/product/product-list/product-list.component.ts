@@ -42,4 +42,8 @@ products:any[] =[];
     this.allproduct();
    
   }
+
+  delete(id:number){
+    alert(id);
+  }
 }

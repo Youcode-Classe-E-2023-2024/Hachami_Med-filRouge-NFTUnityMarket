@@ -1,0 +1,36 @@
+<!------Product Area Start-->
+
+<div class="container pb-16">
+    <div class="flex align-middle justify-end gap-10 my-10 mx-auto">
+        <div class="bg-grey col-12 mt-3 align-middle justify-content-center flex w-1/2">
+            <input type="text" class="col-8 border-2 p-2 w-[80%]" placeholder="Search for Products..."
+                id="search-filter" (keyup)="filterProducts($event)">
+        </div>
+        <span (click)="sortProductsAsc()" style="width: 40px; border-radius: 10px;"
+            class="text-center p-2 flex align-middle bg-slate-500"><i style="width: 40px; border-radius: 10px;"
+                class="fa-solid fa-sort-up "></i></span>
+        <span (click)="sortProductsDesc()" style="width: 40px;border-radius: 10px;"
+            class="text-center p-2 flex align-middle bg-slate-500"><i class="fa-solid fa-sort-down"></i></span>
+
+    </div>
+    <div *ngIf="products.length > 0">
+        <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
+            <div *ngFor="let product of products" class="flex flex-wrap align-middle justify-around w-full">
+                <app-product [product]="product"></app-product>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="products.length === 0">
+        <p>No products found.</p>
+    </div>
+    <div class="flex align-middle justify-center w-full my-24">
+        <button (click)="onPageChange(currentPage - 1)" type="button" [disabled]="currentPage === 1" class="page-btn start-page">Prev</button>
+        <button (click)="onPageChange(currentPage + 1)" type="button" [disabled]="currentPage === totlaPage" class="page-btn start-page">Next</button>
+    </div>
+
+
+
+
+
+</div>
+<!------Product Area End-->

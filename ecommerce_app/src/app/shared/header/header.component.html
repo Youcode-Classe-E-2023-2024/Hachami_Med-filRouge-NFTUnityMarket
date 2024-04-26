@@ -33,8 +33,7 @@
 
                 <a routerLink="/cart-basket" class="block text-center text-gray-700 hover:text-primary transition relative">
                         
-                   <!----<span class="absolute -right-2 -top-1 w-5 h-5 rounded-lg flex items-center justify-center bg-primary text-white text-xs font-bold"> 3</span>
-                 --> 
+                   <span class="absolute -right-2 -top-1 w-5 h-5 rounded-lg flex items-center justify-center bg-primary text-white text-xs font-bold"> {{numItems}}</span>
                     <div class="text-2xl">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
@@ -103,9 +102,9 @@
                 <div class="flex items-center flex-grow pl-16 justify-between">
                     <div class="flex items-center space-x-7 text-base">
                         <a class="text-white font-semibold hover:text-gray-200 transition" routerLink="/"> <i class="fa-solid fa-house"></i> Home</a>
-                        <a class="text-white font-semibold hover:text-gray-200 transition" href="shop.html"> <i class="fa-solid fa-bag-shopping"></i> Shop</a>
-                        <a class="text-white font-semibold hover:text-gray-200 transition" href="#"> <i class="fa-solid fa-address-card"></i> About</a>
-                        <a class="text-white font-semibold hover:text-gray-200 transition" href="#"> <i class="fa-solid fa-phone"></i> Contact</a>
+                        <a class="text-white font-semibold hover:text-gray-200 transition" routerLink="/shop"> <i class="fa-solid fa-bag-shopping"></i> Shop</a>
+                        <a class="text-white font-semibold hover:text-gray-200 transition" routerLink="/about"> <i class="fa-solid fa-address-card"></i> About</a>
+                        <a class="text-white font-semibold hover:text-gray-200 transition" routerLink="/contact"> <i class="fa-solid fa-phone"></i> Contact</a>
                     </div>
                     <div class="space-x-4" *ngIf="!(authService.user && authService.token)">
                         <a class="text-white font-semibold hover:text-gray-200 transition" routerLink="/auth/login"> <i class="fa-solid fa-user"></i> Login</a>
@@ -156,7 +155,7 @@
             </a>
 
             <a href="#" class="block text-center text-gray-950 hover:text-primary transition relative">
-                <span class="absolute -right-3 -top-1 w-5 h-5 rounded-lg flex items-center justify-center bg-primary text-white text-xs font-bold"> 3</span>
+                <span class="absolute -right-3 -top-1 w-5 h-5 rounded-lg flex items-center justify-center bg-primary text-white text-xs font-bold"> {{numItems}}</span>
                 <div class="text-2xl">
                     <i class="fa-solid fa-cart-shopping"></i>
                 </div>

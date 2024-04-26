@@ -8,8 +8,10 @@ import { SliderComponent } from './slider/slider.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { ProductComponent } from './product/product.component';
-// import { ProductDetailComponent } from './product-detail/product-detail.component';
 
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import {ShopComponent} from './shop/shop.component';
+import {AboutComponent} from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ProductComponent } from './product/product.component';
     SliderComponent,
     DashboardComponent,
     ProductComponent,
-    // ProductDetailComponent
+    ProductDetailComponent,
+    ShopComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,

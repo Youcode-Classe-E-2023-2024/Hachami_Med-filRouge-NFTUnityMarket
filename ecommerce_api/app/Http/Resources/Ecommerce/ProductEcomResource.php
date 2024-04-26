@@ -18,7 +18,7 @@ class ProductEcomResource extends JsonResource
         $imageCollection = collect(json_decode($this->resource->imagess, true));
         $sizesCollection =$this->resource->sizes;
         $discountproducts = collect(json_decode($this->resource->discountproducts, true));
-        $price_usd = $this->resource->price_usd;
+        $price_dhs = $this->resource->price_dhs;
         $newPrice=null;
         return[
             "id"=>$this->id,
@@ -31,7 +31,7 @@ class ProductEcomResource extends JsonResource
                 "images"=>$this->resource->category->images,
             ],
 
-            "discount_p"=>$discountproducts->map(function($disco) use ($price_usd){
+            "discount_p"=>$discountproducts->map(function($disco) use ($price_dhs){
                 $discountInfo=null;
                 $type_dc = null;
                 $discountvalue= null;
@@ -47,6 +47,8 @@ class ProductEcomResource extends JsonResource
                             "end_date"=>$discount->end_date,
                             "type"=>$discount->type,
                         ];
+                    }else{
+                        return response()->json(['status'=>'error']);                        
                     }
                 }
 
@@ -56,16 +58,16 @@ class ProductEcomResource extends JsonResource
                
                 if($type_dc==1)
                 {
-                    $newPrice = $price_usd - (($price_usd*$discountvalue)/100);
+                    $newPrice = $price_dhs - (($price_dhs*$discountvalue)/100);
 
                     
                 }
                 else if($type_dc==2)
                 {    
-                     $newPrice = $price_usd - $discountvalue;
+                     $newPrice = $price_dhs - $discountvalue;
                      if($newPrice<0)
                      {
-                        $newPrice = $price_usd;
+                        $newPrice = $price_dhs;
                      }
 
                 }
@@ -86,7 +88,7 @@ class ProductEcomResource extends JsonResource
             "slug"=>$this->resource->slug,
             "sku"=>$this->resource->sku,
             "price_dsc"=>$this->resource->price_dsc,
-            "price_usd"=>$this->resource->price_usd,
+            "price_dhs"=>$this->resource->price_dhs,
             "tags"=>$this->resource->tags,
             "tags_a"=>$this->resource->tags ? explode(",", $this->resource->tags): [],
             "stock"=>$this->resource->stock,

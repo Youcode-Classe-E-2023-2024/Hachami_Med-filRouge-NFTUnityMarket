@@ -1,0 +1,31 @@
+Introduction
+
+Le projet consiste à créer une plateforme de commerce électronique utilisant les frameworks Angular et Laravel. Cette plateforme permettra aux utilisateurs de naviguer à travers un catalogue de produits, de passer des commandes et de gérer leurs profils.
+
+Objectifs
+
+L'objectif principal est de fournir une expérience utilisateur intuitive et sécurisée pour l'achat en ligne de produits. La plateforme vise également à faciliter la gestion des produits et des commandes pour les administrateurs.
+
+Fonctionnalités
+
+- Authentification des utilisateurs avec inscription et connexion.
+- Catalogue de produits avec fonctionnalités de recherche, filtrage et tri.
+- Ajout, modification et suppression de produits dans le panier d'achat.
+- Processus de paiement sécurisé intégrant des passerelles de paiement.
+- Gestion des commandes avec suivi de l'état de la livraison.
+- Tableau de bord administrateur pour gérer les utilisateurs, les produits et les commandes.
+- Intégration de fonctionnalités de promotion, coupons et remises.
+
+Description Fonctionnelle des Besoins
+
+La plateforme doit permettre aux utilisateurs de s'inscrire et de se connecter pour accéder à leur profil et passer des commandes. Ils doivent pouvoir naviguer à travers un catalogue de produits, ajouter des articles à leur panier et procéder au paiement de manière sécurisée. Les administrateurs doivent avoir la possibilité de gérer les produits, les utilisateurs et les commandes via un tableau de bord administrateur.
+
+Technologies utilisées
+
+- Angular pour le développement front-end.
+- Laravel pour le développement back-end.
+- MySQL comme système de gestion de base de données.
+
+Conclusion
+
+En conclusion, la plateforme de commerce électronique développée avec Angular et Laravel vise à offrir une expérience utilisateur transparente et sécurisée tout en facilitant la gestion des produits et des commandes pour les administrateurs. En utilisant des technologies modernes et robustes, nous nous engageons à fournir un produit de haute qualité répondant aux besoins des utilisateurs.
