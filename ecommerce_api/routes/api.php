@@ -89,9 +89,10 @@ Route::group(["middleware" => ["auth:api"]], function(){
 
 
 // PRODUCT
+Route::get("product/all", [ProductController::class, "index"]);
 
 Route::group(["middleware" => ["api"]], function(){
-    Route::get("product/all", [ProductController::class, "index"]);
+    // Route::get("product/all", [ProductController::class, "index"]);
     Route::get("topfour/all", [ProductController::class, "topfour"]);
 
     Route::get("product/get_info", [ProductController::class, "get_info"]);
